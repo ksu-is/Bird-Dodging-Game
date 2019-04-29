@@ -190,6 +190,7 @@ while True:
        
 # Draw the player's rectangle [Tran]
 
+        windowSurface.blit(playerImage, playerRect)
        
 # Draw each bird [Thai]
         drawText('Current Score: %s' % (score), font, windowSurface, 10, 0)
