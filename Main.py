@@ -48,6 +48,17 @@ topScore = 0
 
 # set up the start of the game [Tran]
 
+while True:
+    birds = []
+    pokis = []
+    score = 0
+
+    playerRect.topleft = (WINDOWWIDTH / 2, WINDOWHEIGHT - 50)
+    moveLeft = moveRight = moveUp = moveDown = False
+
+    birdAddCounter = 0
+    
+    pygame.mixer.music.play(-1, 0.0)
 
 
 # the game loop runs while the game part is playing [Thai]
