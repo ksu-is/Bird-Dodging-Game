@@ -185,6 +185,8 @@ while True:
         windowSurface.blit(BACKGROUNDCOLOR,(0,0))
 # Draw the score and top score. [Tran]
 
+        drawText('Current Score: %s' % (score), font, windowSurface, 10, 0)
+        drawText('Top Score: %s' % (topScore), font, windowSurface, 10, 40)
        
 # Draw the player's rectangle [Tran]
 
