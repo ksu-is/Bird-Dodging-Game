@@ -17,7 +17,6 @@ BIRDMAXSPEED = 10
 ADDNEWBIRDRATE = 3
 PLAYERMOVERATE = 25
 
-dfnsd
 # set up pygame, the window, and the mouse cursor
 
 # set up fonts
