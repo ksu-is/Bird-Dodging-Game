@@ -156,7 +156,12 @@ while True:
 
 # Move the birds down. [Tran]
 
- 
+        for b in birds:
+                b['rect'].move_ip(0, b['speed'])
+
+        for p in pokis:
+            p['rect'].move_ip(0, p['speed'])
+
 
 # Delete birds that have fallen past the bottom. [Thai]
 
