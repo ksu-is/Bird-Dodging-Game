@@ -24,7 +24,7 @@ windowSurface = pygame.display.set_mode((WINDOWHEIGHT,WINDOWWIDTH))
 pyhame.mouse.set_visible(False)
 
 # set up fonts [Tran]
-
+font = pygame.font.SysFont(None, 48)
 
 # set up sounds [Tran]
 
