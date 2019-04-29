@@ -218,8 +218,17 @@ while True:
 
 
 
-
-        
-
-
 # Stop the game and show the "Game Over" screen. [Tran]
+
+    pygame.mixer.music.stop()
+
+    gameOverSound.play()
+
+    drawText('GAME OVER!', font, windowSurface, (WINDOWWIDTH / 3), (WINDOWHEIGHT / 3))
+    drawText('Press Space on your keyboard to play again!', font, windowSurface, (WINDOWWIDTH / 3) - 80, (WINDOWHEIGHT / 3) + 250)
+
+    pygame.display.update()
+
+    waitForPlayerToPressKey()
+
+    gameOverSound.stop()
