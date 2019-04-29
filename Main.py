@@ -27,7 +27,8 @@ pyhame.mouse.set_visible(False)
 font = pygame.font.SysFont(None, 48)
 
 # set up sounds [Tran]
-
+gameOverSound = pygame.mixer.Sound('gameover.wav')
+pygame.mixer.music.load('background.mp3')
 
 # set up images [Thai]
 playerImage = pygame.image.load('player.png')
