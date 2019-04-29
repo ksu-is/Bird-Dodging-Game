@@ -36,6 +36,15 @@ playerRect = playerImage.get_rect()
 birdImage = pygame.image.load('bird.png')
 
 # show the "Start" screen [Tran]
+drawText('Bird Dodging Game! Good Luck!', font, windowSurface, (WINDOWWIDTH / 3) - 100, (WINDOWHEIGHT / 3))
+drawText('Use your keyboard arrow or mouse cursor to navigate!', font, windowSurface, (WINDOWWIDTH / 3) - 250, (WINDOWHEIGHT / 3) + 50)
+drawText('Press Space on your keyboard to start game!', font, windowSurface, (WINDOWWIDTH / 3) - 200, (WINDOWHEIGHT / 3) + 100)
+drawText('This code was inspiried by: sameerkhanna786 ', font, windowSurface, (WINDOWWIDTH / 3) - 200, (WINDOWHEIGHT / 3) + 300)
+drawText('Coded by: Thai Cao & Tran Huynh', font, windowSurface, (WINDOWWIDTH / 3) - 200, (WINDOWHEIGHT / 3) + 350)
+pygame.display.update()
+waitForPlayerToPressKey()
+
+topScore = 0
 
 # set up the start of the game [Tran]
 
