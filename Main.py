@@ -197,6 +197,28 @@ while True:
         drawText('Top Score: %s' % (topScore), font, windowSurface, 10, 40)
 # Check if any of the birds have hit the player. [Tran]
 
+        if playerHasHitBird(playerRect, birds):
+            ADDNEWBIRDRATE = 3
+            BIRDMAXSPEED = 10
+
+            if score > topScore:
+                topScore = score # set new top score
+            break
+
+
+
+        if playerHasHitBird(playerRect, pokis):
+            score += 1000
+            ADDNEWBIRDRATE = 3
+            BIRDMAXSPEED = 10
+            for p in pokis[:]:
+                pokis.remove(p)
+
+        mainClock.tick(FPS)
+
+
+
+
         
 
 
