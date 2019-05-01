@@ -21,7 +21,7 @@ PLAYERMOVERATE = 25
 pygame.init()
 mainClock = pygame.time.Clock()
 windowSurface = pygame.display.set_mode((WINDOWHEIGHT,WINDOWWIDTH))
-pyhame.mouse.set_visible(False)
+pygame.mouse.set_visible(False)
 
 # set up fonts [Tran]
 font = pygame.font.SysFont(None, 48)
