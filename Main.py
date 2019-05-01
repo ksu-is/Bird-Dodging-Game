@@ -45,9 +45,11 @@ def drawText(text, font, surface, x, y):
     surface.blit(textobj, textrect)
 
 # set up pygame, the window, and the mouse cursor [Thai]
+
 pygame.init()
 mainClock = pygame.time.Clock()
-windowSurface = pygame.display.set_mode((WINDOWHEIGHT,WINDOWWIDTH))
+windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+pygame.display.set_caption('Bird Dodging Game! Dodge to Survive!!')
 pygame.mouse.set_visible(False)
 
 # set up fonts [Tran]
