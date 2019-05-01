@@ -57,7 +57,7 @@ font = pygame.font.SysFont(None, 48)
 
 # set up sounds [Thai]
 gameOverSound = pygame.mixer.Sound('gameover.wav')
-pygame.mixer.music.load('background.mp3')
+pygame.mixer.music.load('backgroundmusic.mp3')
 
 # set up images [Tran]
 playerImage = pygame.image.load('player.png')
