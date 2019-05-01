@@ -28,7 +28,7 @@ def waitForPlayerToPressKey():
                 terminate()
 
             if event.type == KEYDOWN:
-                if event.key == K_ESCAPE: # pressing escape quits
+                if event.key == K_ESCAPE:
                     terminate()
                 return
 
@@ -55,16 +55,17 @@ pygame.mouse.set_visible(False)
 # set up fonts [Tran]
 font = pygame.font.SysFont(None, 48)
 
-# set up sounds [Tran]
+# set up sounds [Thai]
 gameOverSound = pygame.mixer.Sound('gameover.wav')
 pygame.mixer.music.load('background.mp3')
 
-# set up images [Thai]
+# set up images [Tran]
 playerImage = pygame.image.load('player.png')
 playerRect = playerImage.get_rect()
 birdImage = pygame.image.load('bird.png')
 
-# show the "Start" screen [Tran]
+
+# show the "Start" screen [Thai]
 drawText('Bird Dodging Game! Good Luck!', font, windowSurface, (WINDOWWIDTH / 3) - 100, (WINDOWHEIGHT / 3))
 drawText('Use your keyboard arrow or mouse cursor to navigate!', font, windowSurface, (WINDOWWIDTH / 3) - 250, (WINDOWHEIGHT / 3) + 50)
 drawText('Press Space on your keyboard to start game!', font, windowSurface, (WINDOWWIDTH / 3) - 200, (WINDOWHEIGHT / 3) + 100)
@@ -142,7 +143,9 @@ while True:
                 if event.key == K_DOWN or event.key == ord('s'):
                     playerMove = True
                     moveDown = False
-# If the mouse moves, move the player where the cursor is. [Thai]
+                    
+# If the mouse moves, move the player where the cursor is. [Tran]
+
             if event.type == MOUSEMOTION:
                 playerMove = True
                 playerRect.move_ip(event.pos[0] - playerRect.centerx, event.pos[1] - playerRect.centery)
@@ -163,6 +166,11 @@ while True:
                         'surface':pygame.transform.scale(pokiImage, (BIRDMAXSIZE, BIRDMAXSIZE)),
                         }
             pokis.append(newPoki)
+
+            
+
+
+
 # Move the player around. [Tran]
 
         if moveLeft and playerRect.left > 0:
@@ -176,6 +184,8 @@ while True:
 
         if moveDown and playerRect.bottom < WINDOWHEIGHT:
             playerRect.move_ip(0, PLAYERMOVERATE)
+
+
 
 # Move the mouse cursor to match the player. [Thai]
 
@@ -208,20 +218,32 @@ while True:
             if p['rect'].top > WINDOWHEIGHT:
                 pokis.remove(p)
                 score -= 1000
-# Draw the game world on the window. [Thai]
+
+
+
+# Draw the game world on the window. [Tran]
+
         windowSurface.blit(BACKGROUNDCOLOR,(0,0))
-# Draw the score and top score. [Tran]
+
+# Draw the score and top score. [Thai]
 
         drawText('Current Score: %s' % (score), font, windowSurface, 10, 0)
         drawText('Top Score: %s' % (topScore), font, windowSurface, 10, 40)
-       
+
 # Draw the player's rectangle [Tran]
 
         windowSurface.blit(playerImage, playerRect)
-       
+
 # Draw each bird [Thai]
-        drawText('Current Score: %s' % (score), font, windowSurface, 10, 0)
-        drawText('Top Score: %s' % (topScore), font, windowSurface, 10, 40)
+
+        for b in birds:
+            windowSurface.blit(b['surface'], b['rect'])
+
+        for p in pokis:
+            windowSurface.blit(p['surface'], p['rect'])
+
+        pygame.display.update()
+
 # Check if any of the birds have hit the player. [Tran]
 
         if playerHasHitBird(playerRect, birds):
@@ -245,7 +267,7 @@ while True:
 
 
 
-# Stop the game and show the "Game Over" screen. [Tran]
+# Stop the game and show the "Game Over" screen. [Thai]
 
     pygame.mixer.music.stop()
 
