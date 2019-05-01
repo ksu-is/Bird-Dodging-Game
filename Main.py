@@ -136,7 +136,7 @@ while True:
             pokis.append(newPoki)
 # Move the player around. [Tran]
 
-  if moveLeft and playerRect.left > 0:
+        if moveLeft and playerRect.left > 0:
             playerRect.move_ip(-1 * PLAYERMOVERATE, 0)
 
         if moveRight and playerRect.right < WINDOWWIDTH:
@@ -147,8 +147,6 @@ while True:
 
         if moveDown and playerRect.bottom < WINDOWHEIGHT:
             playerRect.move_ip(0, PLAYERMOVERATE)
-
-
 
 # Move the mouse cursor to match the player. [Thai]
 
